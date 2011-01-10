@@ -1,1 +1,4 @@
 Show pending YUM upgrades and installs as a JSON data structure.
+
+Once installed (and a configfile with enabled is added) run with
+   yum -q update --json
