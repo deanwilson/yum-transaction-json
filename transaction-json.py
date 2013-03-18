@@ -1,5 +1,8 @@
 from yum.plugins import PluginYumExit, TYPE_CORE, TYPE_INTERACTIVE
-import simplejson
+try:
+    import json
+except ImportError:
+    import simplejson as json
 
 requires_api_version = '2.5'
 
@@ -28,5 +31,5 @@ def postresolve_hook(conduit):
             else:
                 packages[transaction.name]["current"] = version
 
-        print( simplejson.dumps(packages) )
+        print( json.dumps(packages) )
         raise PluginYumExit('')
