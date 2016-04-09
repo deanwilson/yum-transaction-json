@@ -8,10 +8,13 @@ requires_api_version = '2.5'
 
 plugin_type = (TYPE_INTERACTIVE,)
 
+
 def config_hook(conduit):
     parser = conduit.getOptParser()
     parser.add_option('', '--json', dest='json', action='store_true',
-           default=False, help="show pending package changes as JSON")
+                      default=False,
+                      help="show pending package changes as JSON")
+
 
 def postresolve_hook(conduit):
     opts, commands = conduit.getCmdLine()
@@ -37,5 +40,5 @@ def postresolve_hook(conduit):
             else:
                 packages[transaction.name]["current"] = version
 
-        print( json.dumps(packages) )
+        print(json.dumps(packages))
         raise PluginYumExit('')
