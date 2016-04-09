@@ -41,5 +41,10 @@ Once installed (and a configfile with enabled is added) run with
         }
     }
 
+### Packaging
+
+If you want to build your own `yum-transaction-json` package then the
+[yum-transaction-json fpm-cookery recipe](https://github.com/deanwilson/unixdaemon-fpm-cookery-recipes/tree/master/recipes/yum-transaction-json) is a quick way to get started.
+
 #### Author
 [Dean Wilson](http://www.unixdaemon.net)
